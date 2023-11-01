@@ -1,34 +1,24 @@
 function subsetA(arr) {
-    //establish return array with integer as to not cause error with reduce function
-    const returnArr = [0]
+    //establish return array 
+    const returnArr = []
     //sort array first, highest to lowest
     arr.sort((a, b) => b - a)
 
-    //establish reducer for array
-    // const subsetATotal = returnArr.reduce((prev, current) => prev + current);
-    // const subsetBTotal = arr.reduce((prev, current) => prev + current);
-        
+    //establish reducer for array and counters
+    let subsetBTotal = arr.reduce((prev, current) => prev + current);
+    let subsetATotal = 0    
         // loop to shift numbers to returnArr from original array
-        while(true) {
-          //establish reducer for array
-          const subsetATotal = returnArr.reduce(
-            (prev, current) => prev + current
-            );
-          const subsetBTotal = arr.reduce(
-            (prev, current) => prev + current
-            );
-            if (subsetBTotal > subsetATotal){
+        while(subsetBTotal > subsetATotal) {
+            //take first element from array and add it to return array, then update counters
           const removeFirstElement = arr.shift();
           returnArr.unshift(removeFirstElement);
-            } else {
-                break
-            }
-          console.log(arr);
-          console.log(subsetATotal);
-          console.log(subsetBTotal);
+                subsetBTotal -= removeFirstElement;
+                subsetATotal += removeFirstElement;
         }
-        //remove intial 0
-        returnArr.pop();
+        // console.log(arr);
+        // console.log(subsetATotal);
+        // console.log(subsetBTotal);
+        // console.log(returnArr)
         return returnArr
 }
 
