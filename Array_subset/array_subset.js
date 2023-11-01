@@ -8,7 +8,7 @@ function subsetA(arr) {
     let subsetBTotal = arr.reduce((prev, current) => prev + current);
     let subsetATotal = 0    
         // loop to shift numbers to returnArr from original array
-        while(subsetBTotal > subsetATotal) {
+        while(subsetBTotal >= subsetATotal) {
             //take first element from array and add it to return array, then update counters
           const removeFirstElement = arr.shift();
           returnArr.unshift(removeFirstElement);
