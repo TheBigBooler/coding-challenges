@@ -20,7 +20,16 @@
 
 
 
-function miniMaxSum(arr) {
-  // Write your code here
-  
-}
+// function miniMaxSum(arr) {
+//   // Write your code here
+//   //sort array
+//   arr.sort()
+//   //sum array
+//   const total = arr.reduce((prev, current) => prev + current);
+
+//   console.log(total - arr[4], total - arr[0]);
+//   return (total-arr[4], total-arr[0])
+// }
+
+// miniMaxSum([1, 3, 5, 7, 9])
+// miniMaxSum challenge done!
